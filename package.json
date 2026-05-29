@@ -1,0 +1,74 @@
+{
+  "name": "vite-plugin-tailwind-ref",
+  "version": "1.0.0",
+  "description": "A Vite plugin that automatically adds @reference directives to CSS files and framework style blocks (Svelte, Vue, etc.) using Tailwind CSS @apply",
+  "keywords": [
+    "vite",
+    "vite-plugin",
+    "tailwindcss",
+    "tailwind",
+    "css",
+    "svelte",
+    "vue",
+    "reference",
+    "apply"
+  ],
+  "homepage": "https://github.com/awaiden/vite-plugin-tailwind-ref#readme",
+  "bugs": {
+    "url": "https://github.com/awaiden/vite-plugin-tailwind-ref/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/awaiden/vite-plugin-tailwind-ref.git"
+  },
+  "license": "MIT",
+  "author": "awaiden",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "main": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "format": "prettier --write .",
+    "lint": "eslint .",
+    "prepare": "husky",
+    "prepublishOnly": "bun run build"
+  },
+  "lint-staged": {
+    "*.{ts,js,mjs}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md}": [
+      "prettier --write"
+    ]
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^25.9.1",
+    "eslint": "^10.4.0",
+    "eslint-plugin-perfectionist": "^5.9.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.0.5",
+    "prettier": "^3.8.3",
+    "prettier-plugin-packagejson": "^3.0.2",
+    "tsdown": "^0.22.0",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.60.0",
+    "unrun": "^0.3.0"
+  },
+  "peerDependencies": {
+    "vite": "^8.0.14"
+  }
+}
